@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rogero.Serilog.Serialization</id>
+    <version>$version$</version>
+    <title>Rogero.Serilog.Serialization</title>
+    <authors>Paul Rogero</authors>
+    <owners>Paul Rogero</owners>
+    <projectUrl>https://github.com/rog1039/Rogero.Serilog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes for loading and saving serilog configuration classes to json/files.</description>    
+  </metadata>
+</package>

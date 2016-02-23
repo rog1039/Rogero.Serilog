@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rogero.Serilog.ElasticSearchSink</id>
+    <version>$version$</version>
+    <title>Rogero.Serilog.ElasticSearchSink</title>
+    <authors>Paul Rogero</authors>
+    <owners>Paul Rogero</owners>
+    <projectUrl>https://github.com/rog1039/Rogero.Serilog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Declarative class for defining an elastic search sink.</description>    
+  </metadata>
+</package>

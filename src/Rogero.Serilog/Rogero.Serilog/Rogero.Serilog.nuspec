@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>Rogero.Serilog</id>
+    <version>$version$</version>
+    <title>Rogero.Serilog</title>
+    <authors>Paul Rogero</authors>
+    <owners>Paul Rogero</owners>
+    <projectUrl>https://github.com/rog1039/Rogero.Serilog</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Classes for declaring serilog configurations as composable elements.</description>    
+  </metadata>
+</package>
