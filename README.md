@@ -15,7 +15,7 @@ https://www.nuget.org/packages/Rogero.Serilog.ElasticSearchSink/
 https://www.nuget.org/packages/Rogero.Serilog.Serialization/
 
 ## Use
-With a instance of ConfigurableSerilogFactory in hand, you can create an ILogger easily:
+With an instance of ConfigurableSerilogFactory in hand, you can create an ILogger easily:
 ```csharp
 var logger = factory.Create();
 ```
