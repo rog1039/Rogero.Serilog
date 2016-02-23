@@ -1,0 +1,36 @@
+﻿{
+  "$type": "Rogero.Serilog.ConfigurableSerilogFactory, Rogero.Serilog",
+  "Configurators": {
+    "$type": "System.Collections.ObjectModel.ReadOnlyCollection`1[[Rogero.Serilog.ISerilogConfigurator, Rogero.Serilog]], mscorlib",
+    "$values": [
+      {
+        "$type": "Rogero.Serilog.Sinks.ConsoleSinkConfigurator, Rogero.Serilog",
+        "RestrictedToMinimumLevel": 0,
+        "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}",
+        "FormatProvider": null
+      },
+      {
+        "$type": "Rogero.Serilog.Sinks.RollingFileSinkConfigurator, Rogero.Serilog",
+        "PathFormat": "rootPath",
+        "RestrictedToMinimumLevel": 0,
+        "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}",
+        "FormatProvider": null,
+        "FileSizeLimitBytes": 1073741824,
+        "RetainedFileCountLimit": 31
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.MachineAndUserDetailsConfigurator, Rogero.Serilog"
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.PropertyEnricherConfigurator, Rogero.Serilog",
+        "PropertyName": "SomeProperty",
+        "Value": "SomeValue",
+        "DestructureObjects": true
+      }
+    ]
+  }
+}
+
