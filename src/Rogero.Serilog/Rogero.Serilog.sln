@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rogero.Serilog.ElasticSearc
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rogero.Serilog.Tests", "Rogero.Serilog.Tests\Rogero.Serilog.Tests.csproj", "{B2F98F5E-6B8D-4D83-BB1C-AEC3CA5603C4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rogero.Serilog.Serialization", "Rogero.Serilog.Serialization\Rogero.Serilog.Serialization.csproj", "{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{B2F98F5E-6B8D-4D83-BB1C-AEC3CA5603C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B2F98F5E-6B8D-4D83-BB1C-AEC3CA5603C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B2F98F5E-6B8D-4D83-BB1C-AEC3CA5603C4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

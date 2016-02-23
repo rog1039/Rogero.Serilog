@@ -24,4 +24,6 @@ namespace Rogero.Serilog
             return logger;
         }
     }
+
+
 }
