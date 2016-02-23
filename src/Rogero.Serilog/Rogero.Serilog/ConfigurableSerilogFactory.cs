@@ -7,11 +7,11 @@ namespace Rogero.Serilog
 {
     public class ConfigurableSerilogFactory : IConfigurableSerilogFactory
     {
-        public IReadOnlyList<ISerilogConfigurator> Configurators { get; set; }
+        public IList<ISerilogConfigurator> Configurators { get; set; }
 
         public ConfigurableSerilogFactory(IEnumerable<ISerilogConfigurator> configurators)
         {
-            Configurators = new ReadOnlyCollection<ISerilogConfigurator>(configurators.ToList());
+            Configurators = new List<ISerilogConfigurator>(configurators.ToList());
         }
         public ConfigurableSerilogFactory(params ISerilogConfigurator[] configurators) : this((IEnumerable<ISerilogConfigurator>)configurators) { }
         private ConfigurableSerilogFactory() { }

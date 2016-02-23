@@ -50,9 +50,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationLocation.cs" />
+    <Compile Include="Enrichments\AppInstanceGuidConfigurator.cs" />
     <Compile Include="Enrichments\BasicApplicationDetailsConfigurator.cs" />
     <Compile Include="ConfigurableSerilogFactory.cs" />
     <Compile Include="Enrichments\PropertyEnricherConfigurator.cs" />
+    <Compile Include="Enrichments\PropertyListEnricherConfigurator.cs" />
     <Compile Include="IConfigurableSerilogFactory.cs" />
     <Compile Include="Sinks\ConsoleSinkConfigurator.cs" />
     <Compile Include="ISerilogConfigurator.cs" />

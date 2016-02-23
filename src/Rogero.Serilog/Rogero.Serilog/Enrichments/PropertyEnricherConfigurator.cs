@@ -1,4 +1,5 @@
-﻿using Serilog;
+﻿using System.Collections;
+using Serilog;
 
 namespace Rogero.Serilog.Enrichments
 {

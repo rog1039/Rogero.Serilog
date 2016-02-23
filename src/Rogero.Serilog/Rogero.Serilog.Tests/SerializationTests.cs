@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Xml.Serialization;
 using FluentAssertions;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
 using Newtonsoft.Json.Linq;
 using Rogero.Serilog.Enrichments;
 using Rogero.Serilog.Sinks;
@@ -39,7 +40,7 @@ namespace Rogero.Serilog.Tests
                 new ConsoleSinkConfigurator(),
                 new RollingFileSinkConfigurator("rootPath"),
                 new MachineAndUserDetailsConfigurator(),
-                new BasicApplicationDetailsConfigurator("SomeApp", Guid.NewGuid(), "UnitTestingEnvironment"),
+                new BasicApplicationDetailsConfigurator("SomeApp", "UnitTestingEnvironment"),
                 new PropertyEnricherConfigurator("SomeProperty", "SomeValue", true));
         }
 
@@ -85,6 +86,27 @@ namespace Rogero.Serilog.Tests
 
             var serializedJson = JsonConvert.SerializeObject(obj, Formatting.Indented);
             Console.WriteLine(serializedJson);
+        }
+
+        [Fact()]
+        [Trait("Category", "Instant")]
+        public void Test_CustomCreationConverters()
+        {
+            var json = "{ \"X\": 5 }";
+            var obj = JsonConvert.DeserializeObject<TestObject2>(json, new TestObject2CustomCreationConverter());
+
+            var serializedJson = JsonConvert.SerializeObject(obj, Formatting.Indented);
+            Console.WriteLine(serializedJson);
+        }
+    }
+
+    public class TestObject2CustomCreationConverter : CustomCreationConverter<TestObject2>
+    {
+        public override bool CanWrite { get; } = false;
+
+        public override TestObject2 Create(Type objectType)
+        {
+            return new TestObject2();
         }
     }
 

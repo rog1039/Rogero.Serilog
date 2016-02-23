@@ -68,6 +68,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrintJsonSampleConfigurations.cs" />
     <Compile Include="SerializationTests.cs" />
     <Compile Include="SimpleTest.cs" />
     <Compile Include="JsonConsoleSink.cs" />
@@ -82,6 +83,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Rogero.Serilog.ElasticSearchSink\Rogero.Serilog.ElasticSearchSink.csproj">
+      <Project>{33BF85CF-2608-414E-81C8-AE607D276787}</Project>
+      <Name>Rogero.Serilog.ElasticSearchSink</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Rogero.Serilog.Serialization\Rogero.Serilog.Serialization.csproj">
+      <Project>{9CCDDE23-268D-4DA7-8B4A-0838DF153F6B}</Project>
+      <Name>Rogero.Serilog.Serialization</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Rogero.Serilog\Rogero.Serilog.csproj">
       <Project>{067354EE-7FE6-4F55-A0C6-2013EE78A279}</Project>
       <Name>Rogero.Serilog</Name>

@@ -22,7 +22,7 @@ namespace Rogero.Serilog.Tests
         public void WithBasicApplicationDetailsConfigurator()
         {
             var configurator =
-                new ConfigurableSerilogFactory(new JsonConsoleSinkConfigurator(), new BasicApplicationDetailsConfigurator("Some App", Guid.NewGuid(), "Dev"));
+                new ConfigurableSerilogFactory(new JsonConsoleSinkConfigurator(), new BasicApplicationDetailsConfigurator("Some App", "Dev"));
             var logger = configurator.Create();
             TestLog(logger);
         }
