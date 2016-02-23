@@ -14,9 +14,7 @@
         "PathFormat": "rootPath",
         "RestrictedToMinimumLevel": 0,
         "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}",
-        "FormatProvider": null,
-        "FileSizeLimitBytes": 1073741824,
-        "RetainedFileCountLimit": 31
+
       },
       {
         "$type": "Rogero.Serilog.Enrichments.MachineAndUserDetailsConfigurator, Rogero.Serilog"

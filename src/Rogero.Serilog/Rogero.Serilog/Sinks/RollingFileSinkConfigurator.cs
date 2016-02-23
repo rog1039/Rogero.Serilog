@@ -12,7 +12,7 @@ namespace Rogero.Serilog.Sinks
         public IFormatProvider FormatProvider { get; }
         public long? FileSizeLimitBytes { get; }
         public int? RetainedFileCountLimit { get; }
-
+        
         public RollingFileSinkConfigurator(string pathFormat, LogEventLevel restrictedToMinimumLevel = LogEventLevel.Verbose, string outputTemplate = "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}", IFormatProvider formatProvider = null, long? fileSizeLimitBytes = 1073741824, int? retainedFileCountLimit = 31)
         {
             PathFormat = pathFormat;

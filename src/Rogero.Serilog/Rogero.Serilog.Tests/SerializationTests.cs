@@ -75,6 +75,29 @@ namespace Rogero.Serilog.Tests
             var json = JsonConvert.SerializeObject(factory, _jsonSettings);
             Console.WriteLine(json);
         }
+
+        [Fact()]
+        [Trait("Category", "Instant")]
+        public void DefaultConstructorParameters()
+        {
+            var json = "{ \"X\": 5 }";
+            var obj = JsonConvert.DeserializeObject<TestObject2>(json);
+
+            var serializedJson = JsonConvert.SerializeObject(obj, Formatting.Indented);
+            Console.WriteLine(serializedJson);
+        }
+    }
+
+    public class TestObject2
+    {
+        public int X { get; }
+        public int Y { get; set; }
+
+        public TestObject2(int x = 10, int y = 20)
+        {
+            X = x;
+            Y = y;
+        }
     }
 
     public class HeadObject
