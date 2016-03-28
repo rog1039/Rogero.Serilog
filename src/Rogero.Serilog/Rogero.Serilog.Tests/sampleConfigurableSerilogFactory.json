@@ -1,8 +1,33 @@
 ﻿{
   "$type": "Rogero.Serilog.ConfigurableSerilogFactory, Rogero.Serilog",
   "Configurators": {
-    "$type": "System.Collections.ObjectModel.ReadOnlyCollection`1[[Rogero.Serilog.ISerilogConfigurator, Rogero.Serilog]], mscorlib",
+    "$type": "System.Collections.Generic.List`1[[Rogero.Serilog.ISerilogConfigurator, Rogero.Serilog]], mscorlib",
     "$values": [
+      {
+        "$type": "Rogero.Serilog.Enrichments.AppInstanceGuidConfigurator, Rogero.Serilog",
+        "AppInstanceGuid": "26f07dae-8aa4-4683-9ed3-a35a70977cc3"
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.MachineAndUserDetailsConfigurator, Rogero.Serilog"
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.PropertyEnricherConfigurator, Rogero.Serilog",
+        "PropertyName": "SomeProp",
+        "Value": "SomeValue",
+        "DestructureObjects": false
+      },
+      {
+        "$type": "Rogero.Serilog.Enrichments.PropertyListEnricherConfigurator, Rogero.Serilog",
+        "Properties": {
+          "$type": "System.Collections.Generic.Dictionary`2[[System.String, mscorlib],[System.Object, mscorlib]], mscorlib",
+          "prop1": "val1",
+          "prop2": 10
+        },
+        "DestructureObjects": true
+      },
       {
         "$type": "Rogero.Serilog.Sinks.ConsoleSinkConfigurator, Rogero.Serilog",
         "RestrictedToMinimumLevel": 0,
@@ -11,22 +36,30 @@
       },
       {
         "$type": "Rogero.Serilog.Sinks.RollingFileSinkConfigurator, Rogero.Serilog",
-        "PathFormat": "rootPath",
+        "PathFormat": "logPrefix",
         "RestrictedToMinimumLevel": 0,
         "OutputTemplate": "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] {Message}{NewLine}{Exception}",
-
+        "FormatProvider": null,
+        "FileSizeLimitBytes": 1073741824,
+        "RetainedFileCountLimit": 31
       },
       {
-        "$type": "Rogero.Serilog.Enrichments.MachineAndUserDetailsConfigurator, Rogero.Serilog"
-      },
-      {
-        "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
-      },
-      {
-        "$type": "Rogero.Serilog.Enrichments.PropertyEnricherConfigurator, Rogero.Serilog",
-        "PropertyName": "SomeProperty",
-        "Value": "SomeValue",
-        "DestructureObjects": true
+        "$type": "Rogero.Serilog.ElasticSearchSink.Sinks.ElasticSearchSinkConfigurator, Rogero.Serilog.ElasticSearchSink",
+        "ElasticSearchUrls": {
+          "$type": "System.String[], mscorlib",
+          "$values": [
+            "http://elastic1:5601",
+            "http://elastic1:5601"
+          ]
+        },
+        "IndexName": {
+          "$type": "Rogero.Serilog.ElasticSearchSink.Sinks.ElasticSearchIndexName, Rogero.Serilog.ElasticSearchSink",
+          "IndexName": "myApp-{0:yyyy.MM.dd}"
+        },
+        "ShippingPeriod": "00:00:01",
+        "ElasticSearchTemplateName": "serilog-events-template",
+        "AutoRegisterTemplate": true,
+        "BufferInLogsSubdirectory": true
       }
     ]
   }

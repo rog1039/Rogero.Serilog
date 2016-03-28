@@ -32,6 +32,8 @@ namespace Rogero.Serilog.Tests
                 new ElasticSearchSinkConfigurator(new []{ "http://elastic1:5601", "http://elastic1:5601", }, ElasticSearchIndexName.FromAppName("myApp"), TimeSpan.FromSeconds(1))
                 );
 
+            var logger = factory.Create();
+
             MakeSureAllConfiguratorsArePresentInThisSample(factory);
             var json = factory.WriteToJsonString();
             Console.WriteLine(json);
