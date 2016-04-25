@@ -4,6 +4,7 @@ using System.Linq;
 using FluentAssertions;
 using Rogero.Serilog.ElasticSearchSink.Sinks;
 using Rogero.Serilog.Enrichments;
+using Rogero.Serilog.Logentries.Sinks;
 using Rogero.Serilog.Serialization;
 using Rogero.Serilog.Sinks;
 using Xunit;
@@ -29,7 +30,8 @@ namespace Rogero.Serilog.Tests
                 new PropertyListEnricherConfigurator(new Dictionary<string, object>{ {"prop1", "val1"}, {"prop2",10 }},true),
                 new ConsoleSinkConfigurator(),
                 new RollingFileSinkConfigurator("logPrefix"),                
-                new ElasticSearchSinkConfigurator(new []{ "http://elastic1:5601", "http://elastic1:5601", }, ElasticSearchIndexName.FromAppName("myApp"), TimeSpan.FromSeconds(1))
+                new ElasticSearchSinkConfigurator(new []{ "http://elastic1:5601", "http://elastic1:5601", }, ElasticSearchIndexName.FromAppName("myApp"), TimeSpan.FromSeconds(1)),
+                new LogEntriesSinkConfigurator("logEntriesTokenValue")
                 );
 
             var logger = factory.Create();

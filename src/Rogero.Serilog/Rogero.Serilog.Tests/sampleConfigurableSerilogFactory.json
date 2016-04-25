@@ -5,7 +5,7 @@
     "$values": [
       {
         "$type": "Rogero.Serilog.Enrichments.AppInstanceGuidConfigurator, Rogero.Serilog",
-        "AppInstanceGuid": "26f07dae-8aa4-4683-9ed3-a35a70977cc3"
+        "AppInstanceGuid": "473de235-c26d-4766-b4ea-edca8170947f"
       },
       {
         "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
@@ -60,6 +60,10 @@
         "ElasticSearchTemplateName": "serilog-events-template",
         "AutoRegisterTemplate": true,
         "BufferInLogsSubdirectory": true
+      },
+      {
+        "$type": "Rogero.Serilog.Logentries.Sinks.LogEntriesSinkConfigurator, Rogero.Serilog.Logentries",
+        "LogentriesToken": "logEntriesTokenValue"
       }
     ]
   }
