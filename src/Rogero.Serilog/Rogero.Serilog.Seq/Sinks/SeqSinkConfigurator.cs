@@ -20,7 +20,7 @@ namespace Rogero.Serilog.Seq.Sinks
 
         public LoggerConfiguration Apply(LoggerConfiguration configuration)
         {
-            if(UseLogFileBuffers) return configuration.WriteTo.Seq(SeqUrl, LogEventLevel, apiKey: ApiKey, bufferBaseFilename:"logs");
+            if(UseLogFileBuffers) return configuration.WriteTo.Seq(SeqUrl, LogEventLevel, apiKey: ApiKey, bufferBaseFilename:"logsBufferBase");
             return configuration.WriteTo.Seq(SeqUrl, LogEventLevel, apiKey:ApiKey);
         }
     }
