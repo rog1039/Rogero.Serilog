@@ -21,7 +21,7 @@ namespace Rogero.Serilog.Serialization
 
         public static ConfigurableSerilogFactory LoadFromJsonFileInAppRoot(string fileName)
         {
-            fileName = $"{ApplicationLocation.AppBase}\\{fileName}";
+            fileName = $"{ApplicationLocation.AppBase}{fileName}";
             var text = File.ReadAllText(fileName);
             return LoadFromJsonText(text);
         }
