@@ -5,7 +5,7 @@
     "$values": [
       {
         "$type": "Rogero.Serilog.Enrichments.AppInstanceGuidConfigurator, Rogero.Serilog",
-        "AppInstanceGuid": "473de235-c26d-4766-b4ea-edca8170947f"
+        "AppInstanceGuid": "9bb84e15-a0be-40f1-9b0f-8c63171ae581"
       },
       {
         "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
@@ -64,6 +64,13 @@
       {
         "$type": "Rogero.Serilog.Logentries.Sinks.LogEntriesSinkConfigurator, Rogero.Serilog.Logentries",
         "LogentriesToken": "logEntriesTokenValue"
+      },
+      {
+        "$type": "Rogero.Serilog.Seq.Sinks.SeqSinkConfigurator, Rogero.Serilog.Seq",
+        "SeqUrl": "http://ws2012r2seq:5341/",
+        "LogEventLevel": 0,
+        "ApiKey": "SomeApiKey",
+        "UseLogFileBuffers": true
       }
     ]
   }

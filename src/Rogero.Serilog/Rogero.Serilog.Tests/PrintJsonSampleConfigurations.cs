@@ -5,8 +5,10 @@ using FluentAssertions;
 using Rogero.Serilog.ElasticSearchSink.Sinks;
 using Rogero.Serilog.Enrichments;
 using Rogero.Serilog.Logentries.Sinks;
+using Rogero.Serilog.Seq.Sinks;
 using Rogero.Serilog.Serialization;
 using Rogero.Serilog.Sinks;
+using Serilog.Events;
 using Xunit;
 
 namespace Rogero.Serilog.Tests
@@ -31,7 +33,8 @@ namespace Rogero.Serilog.Tests
                 new ConsoleSinkConfigurator(),
                 new RollingFileSinkConfigurator("logPrefix"),                
                 new ElasticSearchSinkConfigurator(new []{ "http://elastic1:5601", "http://elastic1:5601", }, ElasticSearchIndexName.FromAppName("myApp"), TimeSpan.FromSeconds(1)),
-                new LogEntriesSinkConfigurator("logEntriesTokenValue")
+                new LogEntriesSinkConfigurator("logEntriesTokenValue"),
+                new SeqSinkConfigurator("http://ws2012r2seq:5341/", LogEventLevel.Verbose, "SomeApiKey", true)
                 );
 
             var logger = factory.Create();
