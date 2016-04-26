@@ -5,7 +5,7 @@
     "$values": [
       {
         "$type": "Rogero.Serilog.Enrichments.AppInstanceGuidConfigurator, Rogero.Serilog",
-        "AppInstanceGuid": "9bb84e15-a0be-40f1-9b0f-8c63171ae581"
+        "AppInstanceGuid": "a30b49b7-f2f9-4f91-85c2-4bd7ea6bff88"
       },
       {
         "$type": "Rogero.Serilog.Enrichments.BasicApplicationDetailsConfigurator, Rogero.Serilog"
@@ -70,7 +70,8 @@
         "SeqUrl": "http://ws2012r2seq:5341/",
         "LogEventLevel": 0,
         "ApiKey": "SomeApiKey",
-        "UseLogFileBuffers": true
+        "UseLogFileBuffers": true,
+        "BufferBaseFileName": "logsBufferBase"
       }
     ]
   }
