@@ -12,6 +12,10 @@ namespace Rogero.Serilog.Serialization
         {
             return ConfigurableSerilogFactorySerializer.LoadFromJsonFile(fileName);
         }
+        public static ConfigurableSerilogFactory LoadFromJsonFileInAppRoot(this string fileName)
+        {
+            return ConfigurableSerilogFactorySerializer.LoadFromJsonFileInAppRoot(fileName);
+        }
 
         public static ConfigurableSerilogFactory LoadFromJsonText(this string json)
         {
